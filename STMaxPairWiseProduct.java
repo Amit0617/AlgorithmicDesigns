@@ -18,6 +18,7 @@ if(ind1 == 0) {ind2 = 1;}
 else ind2 = 0;
 for (int j=1; j<n; j++){
 //part below can cause this algorithm to fail when a array have largest number twice
+//causing that number to be ignored
 //if(numbers[j]!=numbers[ind1] && numbers[j]>numbers[ind2]){
 if(j!=ind1 && numbers[j]>numbers[ind2]){
 ind2 = j;
