@@ -2,7 +2,7 @@
 This repository is a collection of whatever I learn to improve my DSA skills. I am documenting it because it gives me an opportunity to look back and ponder again on concepts which I have learned with more matured perspective in comparison to my first visit through those concepts.
 Let's start now.
 
-## Algorithmic Designs
+# Algorithmic Designs
 Starting with simplest things like `GetInputFromUser.java` and `APlusB.java` to familiarize myself with java language(have used long time ago.)
 
 ### Maximum Pairwise Product
