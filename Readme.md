@@ -1,48 +1,48 @@
 ### What is this?
-This repository is a collection of whatever I learn to improve my DSA skills. I am documenting it because it gives me an opportunity to look back and ponder again on concepts which I have learned with more matured perspective in comparison to my first visit through those concepts.
+This repository is a collection of whatever I learn to improve my DSA skills. I am documenting it because it gives me an opportunity to look back and ponder again on concepts which I had learnt with more matured perspective in comparison to my first visit through those concepts.
 Let's start now.
 
 # Algorithmic Designs
-Starting with simplest things like `GetInputFromUser.java` and `APlusB.java` to familiarize myself with java language(have used long time ago.)
+Starting with simplest things like `GetInputFromUser.java` and `APlusB.java` to familiarize myself with java language(have used long time ago).
 
-### Maximum Pairwise Product
+## Maximum Pairwise Product
 Find maximum product of two *distinct* numbers in a list of numbers.
 
-Now to actually reflect that we have understood the problem we will try to come up with a naive algorithm that just works without much thinking about time and memory constraints.
+Now to actually reflect that we have understood the problem we will try to come up with a naive algorithm that just works. We will not think much about time and memory constraints right now.
 
-###### Naive Algorithm
-A naive approach of doing this will be just multiplying all possible pairs, then comparing them and keep updating the `product` for larger one. 
+##### Naive Algorithm
+A naive approach of doing this will be just multiplying all possible pairs of numbers within the given list of numbers, then comparing them and updating the `product` for larger one. 
 At the end we will be having the largest possible product in that sequence of numbers.
 An example code is available in repository `MaxPairWiseProduct.java`.
 
 Fine! so we are done right? No.
-The problem with above code is that its time complexity will be &theta;(n<sup>2</sup>). How? (link to runtimes section) Which simply means we have to improve our algorithm.
+The problem with above code is that its time complexity will be &theta;(n<sup>2</sup>). [How?](link to runtimes section) Which simply means we have to improve our algorithm.
 
-###### Fast Algorithm
-A faster approach to get maximum pairwise product can be finding two largest numbers in sequence of numbers which will be giving maximum product.
+##### Fast Algorithm
+A faster approach to get maximum pairwise product can be - finding two largest numbers in sequence of numbers because those will be giving maximum product.
 
 To find first largest and second largest elements, we need to scan only two times through the array and updating two indices i.e., `index1` and `index2` with their position inside array.
 
 An example code is available in repository `MaxPairWiseProductFast.java` 
 
-###### Testing and Debugging
+##### Testing and Debugging
 The part in algorithm designing which generally gets skipped and often overlooked. However, the most important part. It is generally assumed that there are multiple ways to implement a logic but in actual there are very few ways(or algorithms) which cover all the edge cases.
 
 To test our algorithm we will write a program to generate random datasets and will use that in testing our algorithm.
 
 An example code for generating required inputs is available in repository `RandomNumbers.java`
 
-We can use `RandomNumbers.java` to create `dataset.txt`.
+We can use `RandomNumbers.java` to create `dataset.txt` by redirecting its output.
 `java RandomNumbers > dataset.txt` in console and then `java MaxPairWiseProductFast < dataset.txt` to use that dataset as input rather than from STDIN (entering yourself).
 
-###### Stress Testing 
-Now the problem is it is still very slow and boring. We need to test our algorithm heavily and find the finally one that causes our algorithm fail.
+##### Stress Testing 
+Now the problem is - it is still very slow and boring. We need to test our algorithm heavily and find the finally one that causes our algorithm fail.
 
 So this is the time to do _Stress Testing_.
 We need following things to do it:-
-*i) Our algorithm which we want to test.*
-*ii) Other trivial algorithm(which might be slower) performing same solution* 
-*iii) A random dataset generator.*
+*i) Our algorithm which we want to test.*\n
+*ii) Other trivial algorithm(which might be slower) performing same solution.*\n 
+*iii) A random dataset generator.*\n
 *iv) An infinite loop which will keep running until we find a test case for which our algorithm gives different solution.*
 
 Methodology behind all this is that our algorithm must give same answer as the trivial algorithm(assuming it is implemented correctly, obviously) in every case. If that's not the case then it must be missing something.
@@ -63,16 +63,16 @@ So we can do one more _optimization_ to fix it. After finding the first largest 
 
 An example code is available in repository `OpMaxPairWiseProduct.java`
 
-###### A Straight way
+##### A Straight way
 We can also implement this problem by sorting the array in ascending or descending order using some sorting techniques, then returning the product of last two numbers or first two numbers respectively. 
 However, it is providing more than required that it is sorting whole array where we need just two largest numbers. Also, it's runtime will be higher than our fast or optimised algorithm i.e., _O(nlogn)_ in comparison to _O(n)_. Still it is not very slow and can be considered an efficient algorithm.
 
 So this was some introduction to good practices for making a really working and fast(may be complex sometimes) algorithm. 
 
-### Nth Fibonacci number
+## Nth Fibonacci number
 Find nth fibonacci number. 
 
-###### Fibonacci Series 
+##### Fibonacci Series 
 If you don't know what fibonacci series is then it is basically a sequence of numbers where each number is sum of the preceeding two numbers.
 It goes in following way
 
@@ -80,7 +80,7 @@ It goes in following way
 
 [Learn more](https://en.wikipedia.org/wiki/Fibonacci_number)
 
-###### Naive Algorithm
+##### Naive Algorithm
 If we look at fibonacci series then it can be calculated for any nth number because there is only one way to follow it assuming algorithm knows the first two numbers only i.e., `0` and `1`
 
 So a recursive approach can be implemented to find it. An example code is available in repository `NthFibonacci.java` 
@@ -91,7 +91,7 @@ Runtime in this case grows exponentially i.e., _O(2<sup>n</sup>)_ which can be f
 Why so slow?
 >I was joking. Actually it will take **years** to compute. 
 
-###### Runtime of Naive algorithm
+##### Runtime of Naive algorithm
 Considering algorithm given in example code we have _T(n) = 3_ for n <= 1 and _T(n) = 3 + T(n-1) + T(n-2)_ for n >= 2.
 Where _T(n)_ is number of lines of code needs to be executed for calculating the nth fibonacci number.
 >Facing difficulty in visualising? [gif](link in repo)
@@ -106,7 +106,7 @@ If you look at the tree below you will find one of the reason is that it is calc
 Fibonacci(2) is calculated 13 times in finding just Fibonacci(8). For Fibonacci(9) it will rise to 21.
 [total wastage!]
 
-###### Another Algorithmic Solution
+##### Another Algorithmic Solution
 If we just think then in a go we can tell Fibonacci(8) will be 13 and we were able to do it by simply going in the series upto 8th number like `0,1,1,2,3,5,8,13` 
 If we implement algorithm in similar way it must be faster than recursion approach.
 An example code is available in repository `NthFibonacciFast.java`
@@ -115,7 +115,7 @@ Note - If you will try something higher like Fibonacci(90) then it might fail be
 
 [gif](link) Compare the results for recursive versus table.
 
-###### A Simpler Mathematical approach
+##### A Simpler Mathematical approach
 There is a direct formula for finding nth fibonacci number.
 
 
@@ -123,7 +123,7 @@ There is a direct formula for finding nth fibonacci number.
 
 
 
-### Last Digit of a Large Fibonacci Number
+## Last Digit of a Large Fibonacci Number
 Find last digit of the nth Fibonacci number
 
 Since it grows exponentially faster hence it is somewhat more practical to find just last digit rather than whole number.
@@ -134,17 +134,17 @@ Calculating last digit only will allow us to give inputs like even `30000` i.e.,
 
 An example code is available in repository `LastdigitFibonacci.java`
 
-### Greatest Common Divisor
+## Greatest Common Divisor
 Find greatest common divisor of two given integers.
 
-###### Naive Algorithm
+##### Naive Algorithm
 Basically we need a number that in collection of numbers which divides both and it should be greatest among them.
 
 Greatest number in collection of numbers which can divide both of them must be smaller than the smallest between two.
 
 An example code is available in repository `GCD.java`.
 
-###### Fast Algorithm
+##### Fast Algorithm
 If you remember we have learned an algorithm(method) when we were kids. May be you knew it as HCF(Highest Common Factor).
 A division method where we take the smaller number as divisor and greater number as dividend. If the greater number got divided completely i.e., remainder comes out to be zero then the divisor itself is the HCF of those two numbers. Else, remainder becomes the new divisor and the divisor in previous operation becomes dividend and this keeps going on until zero remainder is obtained.
 [Image](link)
@@ -156,29 +156,74 @@ A division method where we take the smaller number as divisor and greater number
 
 An example code is available in repository `GCDFast.java`
 
-###### Stress Testing Algorithm and System 😝
+##### Stress Testing Algorithm and System 😝
 [Screenshot](link)
 
 Try yourself to see how slow an algorithm becomes for large numbers because of linear time complexity (_O(n)_).
 An example code is available in repository `STGCD.java`
 
-###### GCD of two or more numbers
+##### GCD of two or more numbers
 DIY
 
 >Hint: gcd(a,b,c) = gcd(gcd(a,b),c)
 
-### LCM
+## LCM
 Find LCM of two given numbers.
 
-###### Naive Algorithm
+Datasets to test 
+1. Input : `8 12`
+   Output : `24`
+   
+2. Input : `34569852 1259642`
+   Output : ``   
+
+##### Naive Algorithm
 DIY
+
+##### Fast Algorithm
+DIY
+
 
 To be continued...
 
 
 {
 _Note:- Definitions below are completely made up by myself and reflects my understanding of these. These shouldn't be considered standard definitions of algorithms._
-**Greedy algorithm** - A technique to solve a bigger problem by considering a subproblem within it and solving it in such a way that can solve the bigger problem by iterating that again and again. Didn't understood? Move ahead.
+## Greedy algorithm - 
+A technique to solve a bigger problem by considering a subproblem within it and solving it in such a way that can solve the bigger problem by iterating a locally optimised solution again and again. Didn't understood? Move ahead.
+
+##### Greedy Choice 
+A choice which will optimised locally and can be applied globally to solve the problem.
+
+##### Safe Choice 
+If the greedy choice is optimal solution and consitent with first choice it is called safe choice.
+
+##### An example to understand all above technical shit.
+Lets assume n patients have arrived at doctors office at the same time and compounder have to send them inside one by one because they can be treated individually only. Compounder wants to send them in such a way so that total waiting time for all patients is least. Given they can be sent in any order and time required to treat each patient is known.
+
+So Compounder sends the patient with least time of treatment first thinking that this way second patient will have to wait minimum time in queue. This is called Greedy Choice.
+
+Now, is that choice optimal enough to keep solving the subproblem by iterating it again and again and hence solve the whole problem?
+
+Lets assume 3 patients, P<sub>1</sub>, P<sub>2</sub> and P<sub>3</sub> with treatment time 10 minutes, 30 minutes and 60 minutes arrive at 10:00 A.M. at doctor's clinic.
+
+There are 6 possible arrangements of queue with following total waiting time: 
+i) P<sub>1</sub> sent immediately, P<sub>2</sub> after 10 minutes and then P<sub>3</sub> after 30 minutes. Total waiting time = 40 minutes.\n
+ii) P<sub>2</sub> sent immediately, P<sub>1</sub> after 30 minutes and then P<sub>3</sub> after 10 minutes of P<sub>1</sub>. Total waiting time = 40 minutes.\n
+iii) P<sub>3</sub> sent immediately, P<sub>1</sub> after 60 minutes and then P<sub>2</sub> after 10 minutes. Total waiting time = 70 minutes.\n
+iv) P<sub>3</sub> sent immediately, P<sub>2</sub> after 60 minutes and then P<sub>1</sub> after 30 minutes. Total waiting time = 90 minutes.\n
+v) P<sub>2</sub> sent immediately, P<sub>3</sub> after 30 minutes and then P<sub>1</sub> after 60 minutes. Total waiting time = 90 minutes.\n
+vi0 P<sub>1</sub> sent immediately, P<sub>3</sub> after 10 minutes and then P<sub>2</sub> after 60 minutes. Total waiting time = 70 minutes.\n
+
+Now considering above arrangements its clear that arranging patients with least treatment time to keep first on priority.
+
+You might ask that first two arrangements both have least total waiting time so why not second is optimal one? I will suggest think about waiting time for successive patients. However, the total time comes out to be same but second patient i.e., P<sub>1</sub> in that case will have to wait 30 minutes for his 10 minutes treatment, while there is no difference for P<sub>3</sub> it will be 40 in both cases.
+
+This small example leaves us to draw a simple conclusion that the greedy choice made first time can be optimally iterated throughout the queue and hence now this greedy choice can be called a <u>_safe choice_</u>.
+
+
+
+
 **Divide and Conquer algorithm** - A technique to solve a bigger problem by breaking it down into multiple smaller kind of subproblem and joining them all together. As you can expect from its name also!
 *If you look closely Greedy algorithm is also the same but there all the smaller problems are of similar kind in contrast to divide and conquer problem where the smaller subproblems are different(but not of different kind) and have to deal with each of them in different way recursively.*
 
