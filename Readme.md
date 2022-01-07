@@ -208,12 +208,12 @@ Now, is that choice optimal enough to keep solving the subproblem by iterating i
 Lets assume 3 patients, P<sub>1</sub>, P<sub>2</sub> and P<sub>3</sub> with treatment time 10 minutes, 30 minutes and 60 minutes arrive at 10:00 A.M. at doctor's clinic.
 
 There are 6 possible arrangements of queue with following total waiting time: 
-i) P<sub>1</sub> sent immediately, P<sub>2</sub> after 10 minutes and then P<sub>3</sub> after 30 minutes. Total waiting time = 40 minutes.\n
-ii) P<sub>2</sub> sent immediately, P<sub>1</sub> after 30 minutes and then P<sub>3</sub> after 10 minutes of P<sub>1</sub>. Total waiting time = 40 minutes.\n
-iii) P<sub>3</sub> sent immediately, P<sub>1</sub> after 60 minutes and then P<sub>2</sub> after 10 minutes. Total waiting time = 70 minutes.\n
-iv) P<sub>3</sub> sent immediately, P<sub>2</sub> after 60 minutes and then P<sub>1</sub> after 30 minutes. Total waiting time = 90 minutes.\n
-v) P<sub>2</sub> sent immediately, P<sub>3</sub> after 30 minutes and then P<sub>1</sub> after 60 minutes. Total waiting time = 90 minutes.\n
-vi0 P<sub>1</sub> sent immediately, P<sub>3</sub> after 10 minutes and then P<sub>2</sub> after 60 minutes. Total waiting time = 70 minutes.\n
+i) P<sub>1</sub> sent immediately, P<sub>2</sub> after 10 minutes and then P<sub>3</sub> after 30 minutes. Total waiting time = 40 minutes.  
+ii) P<sub>2</sub> sent immediately, P<sub>1</sub> after 30 minutes and then P<sub>3</sub> after 10 minutes of P<sub>1</sub>. Total waiting time = 40 minutes.  
+iii) P<sub>3</sub> sent immediately, P<sub>1</sub> after 60 minutes and then P<sub>2</sub> after 10 minutes. Total waiting time = 70 minutes.  
+iv) P<sub>3</sub> sent immediately, P<sub>2</sub> after 60 minutes and then P<sub>1</sub> after 30 minutes. Total waiting time = 90 minutes.  
+v) P<sub>2</sub> sent immediately, P<sub>3</sub> after 30 minutes and then P<sub>1</sub> after 60 minutes. Total waiting time = 90 minutes.  
+vi0 P<sub>1</sub> sent immediately, P<sub>3</sub> after 10 minutes and then P<sub>2</sub> after 60 minutes. Total waiting time = 70 minutes.  
 
 Now considering above arrangements its clear that arranging patients with least treatment time to keep first on priority.
 
