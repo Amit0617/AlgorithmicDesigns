@@ -40,10 +40,10 @@ Now the problem is - it is still very slow and boring. We need to test our algor
 
 So this is the time to do _Stress Testing_.
 We need following things to do it:-
-*i) Our algorithm which we want to test.*\n
-*ii) Other trivial algorithm(which might be slower) performing same solution.*\n 
-*iii) A random dataset generator.*\n
-*iv) An infinite loop which will keep running until we find a test case for which our algorithm gives different solution.*
+*i) Our algorithm which we want to test.*  
+*ii) Other trivial algorithm(which might be slower) performing same solution.*  
+*iii) A random dataset generator.*  
+*iv) An infinite loop which will keep running until we find a test case for which our algorithm gives different solution.*  
 
 Methodology behind all this is that our algorithm must give same answer as the trivial algorithm(assuming it is implemented correctly, obviously) in every case. If that's not the case then it must be missing something.
 
@@ -207,7 +207,7 @@ Now, is that choice optimal enough to keep solving the subproblem by iterating i
 
 Lets assume 3 patients, P<sub>1</sub>, P<sub>2</sub> and P<sub>3</sub> with treatment time 10 minutes, 30 minutes and 60 minutes arrive at 10:00 A.M. at doctor's clinic.
 
-There are 6 possible arrangements of queue with following total waiting time: 
+There are 6 possible arrangements of queue with following total waiting time:  
 i) P<sub>1</sub> sent immediately, P<sub>2</sub> after 10 minutes and then P<sub>3</sub> after 30 minutes. Total waiting time = 40 minutes.  
 ii) P<sub>2</sub> sent immediately, P<sub>1</sub> after 30 minutes and then P<sub>3</sub> after 10 minutes of P<sub>1</sub>. Total waiting time = 40 minutes.  
 iii) P<sub>3</sub> sent immediately, P<sub>1</sub> after 60 minutes and then P<sub>2</sub> after 10 minutes. Total waiting time = 70 minutes.  
@@ -219,8 +219,15 @@ Now considering above arrangements its clear that arranging patients with least 
 
 You might ask that first two arrangements both have least total waiting time so why not second is optimal one? I will suggest think about waiting time for successive patients. However, the total time comes out to be same but second patient i.e., P<sub>1</sub> in that case will have to wait 30 minutes for his 10 minutes treatment, while there is no difference for P<sub>3</sub> it will be 40 in both cases.
 
-This small example leaves us to draw a simple conclusion that the greedy choice made first time can be optimally iterated throughout the queue and hence now this greedy choice can be called a <u>_safe choice_</u>.
+This small example allows us to draw a simple conclusion that the greedy choice made first time can be optimally iterated throughout the queue and hence now this greedy choice can be called a <u>_safe choice_</u>.
 
+This whole process is called Greedy Algorithm. Thankyou.
+
+One Small and very trivial problem to solve:
+Lets suppose you went to an ATM to withdraw some cash. You inserted your card in ATM and this ATM seems to be faulty. This pops your bank balance on screen. You were confused and hence entered some random digits there 13780 (say) and hit next and damn your bank balance is updated to this new number! 
+You hurried back to that edit balance screen and you again pressed some random numbers but this time that numeric pad is behaving differently. After hitting several numbers you found out that those keys after pressing next button are no more functional which you have pressed last time. So, you can't use them this time but you are still on edit screen and keys allowed to be pressed are `2,4,5,6,9`. Now you want to press them in such a manner that you get maximum bank balance.  
+
+_Greedy_ Choice will be to have largest number 
 
 
 
