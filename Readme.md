@@ -230,15 +230,15 @@ You hurried back to that edit balance screen and you again pressed some random n
 _Greedy_ Choice will be to have largest possible number as your bank balance. To have largest number from a given set of digits we would place maximum number among them on maximum priority place.
 
 `Max(2, 4, 5, 6, 9) = 9` place it at highest place and remove that number from the list.  
-`<u>9</u><u></u><u></u><u></u><u></u>`
+<u>9</u><u></u><u></u><u></u><u></u>
 `Max(2, 4, 5, 6) = 6` place it at highest place and remove that number from the list.
-`<u>9</u><u>6</u><u></u><u></u><u></u>`
+<u>9</u><u>6</u><u></u><u></u><u></u>
 `Max(2, 4, 5) = 5` place it at highest place and remove that number from the list.
-`<u>9</u><u>6</u><u>5</u><u></u><u></u>`
+<u>9</u><u>6</u><u>5</u><u></u><u></u>
 `Max(2, 4) = 4` place it at highest place and remove that number from the list.
-`<u>9</u><u>6</u><u>5</u><u>4</u><u></u>`
+<u>9</u><u>6</u><u>5</u><u>4</u><u></u>
 `Max(2) = 2` place it at highest place and remove that number from the list.
-`<u>9</u><u>6</u><u>5</u><u>4</u><u>2</u>`
+<u>9</u><u>6</u><u>5</u><u>4</u><u>2</u>
 
 The choice we made to pick largest number at that instant is greedy choice and to that choice is consistent throughout the process hence this greedy choice is safe choice.  
 Now consistently viewing this scenario that greedy choice is turning out to be safe choice this shouldn't be assumed that it will be safe always. Infact, greedy choices mostly comes out to be a unsafe choice.  
