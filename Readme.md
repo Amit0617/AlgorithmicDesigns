@@ -227,9 +227,26 @@ One Small and very trivial problem to solve:
 Lets suppose you went to an ATM to withdraw some cash. You inserted your card in ATM and this ATM seems to be faulty. This pops your bank balance on screen. You were confused and hence entered some random digits there 13780 (say) and hit next and damn your bank balance is updated to this new number! 
 You hurried back to that edit balance screen and you again pressed some random numbers but this time that numeric pad is behaving differently. After hitting several numbers you found out that those keys after pressing next button are no more functional which you have pressed last time. So, you can't use them this time but you are still on edit screen and keys allowed to be pressed are `2,4,5,6,9`. Now you want to press them in such a manner that you get maximum bank balance.  
 
-_Greedy_ Choice will be to have largest number 
+_Greedy_ Choice will be to have largest possible number as your bank balance. To have largest number from a given set of digits we would place maximum number among them on maximum priority place.
 
+`Max(2, 4, 5, 6, 9) = 9` place it at highest place and remove that number from the list.  
+`<u>9</u><u></u><u></u><u></u><u></u>`
+`Max(2, 4, 5, 6) = 6` place it at highest place and remove that number from the list.
+`<u>9</u><u>6</u><u></u><u></u><u></u>`
+`Max(2, 4, 5) = 5` place it at highest place and remove that number from the list.
+`<u>9</u><u>6</u><u>5</u><u></u><u></u>`
+`Max(2, 4) = 4` place it at highest place and remove that number from the list.
+`<u>9</u><u>6</u><u>5</u><u>4</u><u></u>`
+`Max(2) = 2` place it at highest place and remove that number from the list.
+`<u>9</u><u>6</u><u>5</u><u>4</u><u>2</u>`
 
+The choice we made to pick largest number at that instant is greedy choice and to that choice is consistent throughout the process hence this greedy choice is safe choice.  
+Now consistently viewing this scenario that greedy choice is turning out to be safe choice this shouldn't be assumed that it will be safe always. Infact, greedy choices mostly comes out to be a unsafe choice.  
+Let's take a look at following example:  
+To get the path for largest sum, greedy algorithm will try to make decision on immediate comparison i.e., by comparing `3` and `12`. Finding `12 > 3` it will move ahead and again will make comparison between `5` and `6`. Finding `6 > 5` the largest sum accourdingly will turn out to be `25`. While we can see that the actual largest sum will be `109 (= 7 + 3 + 99)`.
+(gif)[https://en.wikipedia.org/wiki/File:Greedy-search-path-example.gif]  
+
+This shows how a greedy choice can be unsafe choice too and we have to think in advance for that whether our greedy choice can give us globally optimised solution on looping through our problem and solving sub-problems.
 
 **Divide and Conquer algorithm** - A technique to solve a bigger problem by breaking it down into multiple smaller kind of subproblem and joining them all together. As you can expect from its name also!
 *If you look closely Greedy algorithm is also the same but there all the smaller problems are of similar kind in contrast to divide and conquer problem where the smaller subproblems are different(but not of different kind) and have to deal with each of them in different way recursively.*
