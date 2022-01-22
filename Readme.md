@@ -32,18 +32,18 @@ To test our algorithm we will write a program to generate random datasets and wi
 
 An example code for generating required inputs is available in repository `RandomNumbers.java`
 
-We can use `RandomNumbers.java` to create `dataset.txt` by redirecting its output.
+We can use `RandomNumbers.java` to create `dataset.txt` by redirecting its output.  
 `java RandomNumbers > dataset.txt` in console and then `java MaxPairWiseProductFast < dataset.txt` to use that dataset as input rather than from STDIN (entering yourself).
 
 ##### Stress Testing 
-Now the problem is - it is still very slow and boring. We need to test our algorithm heavily and find the finally one that causes our algorithm fail.
+Now the problem is - it is still very slow and boring. We need to test our algorithm heavily and find the finally one that can lead our algorithm to fail.
 
-So this is the time to do _Stress Testing_.
-We need following things to do it:-
+So this is the time to do _Stress Testing_.  
+We need following things to do it:-  
 *i) Our algorithm which we want to test.*  
 *ii) Other trivial algorithm(which might be slower) performing same solution.*  
 *iii) A random dataset generator.*  
-*iv) An infinite loop which will keep running until we find a test case for which our algorithm gives different solution.*  
+*iv) An infinite loop which will keep running until we find a test case for which our algorithms give different solution.*  
 
 Methodology behind all this is that our algorithm must give same answer as the trivial algorithm(assuming it is implemented correctly, obviously) in every case. If that's not the case then it must be missing something.
 
@@ -223,9 +223,11 @@ This small example allows us to draw a simple conclusion that the greedy choice 
 
 This whole process is called Greedy Algorithm. Thankyou.
 
+An implementation of this problem is available in repository `MinTotalTime.java`.
+
 One Small and very trivial problem to solve:
-Lets suppose you went to an ATM to withdraw some cash. You inserted your card in ATM and this ATM seems to be faulty. This pops your bank balance on screen. You were confused and hence entered some random digits there 13780 (say) and hit next and damn your bank balance is updated to this new number! 
-You hurried back to that edit balance screen and you again pressed some random numbers but this time that numeric pad is behaving differently. After hitting several numbers you found out that those keys after pressing next button are no more functional which you have pressed last time. So, you can't use them this time but you are still on edit screen and keys allowed to be pressed are `2,4,5,6,9`. Now you want to press them in such a manner that you get maximum bank balance.  
+Lets suppose you went to an ATM to withdraw some cash. You inserted your card in ATM and this ATM seems to be faulty. This reflects your bank balance on screen. You were confused and hence entered some random digits there 13780 (say) and hit next and damn your bank balance is updated to this new number! 
+You hurried back to that edit balance screen and you again pressed some random numbers but this time that numeric pad is behaving differently. After hitting several numbers you found out that those keys(which you have pressed earlier) after pressing next button are no more functional. So, you can't use them this time but you are still on edit screen and keys allowed to be pressed are `2,4,5,6,9`. One button will be working one time only. Now you want to press them in such a manner that you get maximum bank balance.  
 
 _Greedy_ Choice will be to have largest possible number as your bank balance. To have largest number from a given set of digits we would place maximum number among them on maximum priority place.
 
@@ -240,13 +242,22 @@ _Greedy_ Choice will be to have largest possible number as your bank balance. To
 `Max(2) = 2` place it at highest place and remove that number from the list.  
 <u>9</u><u>6</u><u>5</u><u>4</u><u>2</u>  
 
-The choice we made to pick largest number at that instant is greedy choice and to that choice is consistent throughout the process hence this greedy choice is safe choice.  
-Now consistently viewing this scenario that greedy choice is turning out to be safe choice this shouldn't be assumed that it will be safe always. Infact, greedy choices mostly comes out to be a unsafe choice.  
+The choice we made to pick largest number at that instant is greedy choice and that choice is consistent throughout the process hence this greedy choice is safe choice.  
+Now consistently viewing this scenario that greedy choice is turning out to be safe choice this shouldn't be assumed that it will be safe always. Infact, greedy choice often comes out to be a unsafe choice.  
 Let's take a look at following example:  
 To get the path for largest sum, greedy algorithm will try to make decision on immediate comparison i.e., by comparing `3` and `12`. Finding `12 > 3` it will move ahead and again will make comparison between `5` and `6`. Finding `6 > 5` the largest sum accourdingly will turn out to be `25`. While we can see that the actual largest sum will be `109 (= 7 + 3 + 99)`.
 (gif)[https://en.wikipedia.org/wiki/File:Greedy-search-path-example.gif]  
 
 This shows how a greedy choice can be unsafe choice too and we have to think in advance for that whether our greedy choice can give us globally optimised solution on looping through our problem and solving sub-problems.
+
+### Cashier's Money Change Problem
+Find minimum number of coins needed to change the required value into coins with denominations 1, 5, 10.
+
+### Maximum Advertisement Revenue Problem
+Find such distribution of ads on a popular internet page owned by you so that `n` ads placed on `n` slots on that page. Assuming you have estimated counts of clicks for each slot and different advertisers have different budgets for their ads. You have to maximize total revenue made from adclicks.
+
+### Collecting Signatures
+
 
 **Divide and Conquer algorithm** - A technique to solve a bigger problem by breaking it down into multiple smaller kind of subproblem and joining them all together. As you can expect from its name also!
 *If you look closely Greedy algorithm is also the same but there all the smaller problems are of similar kind in contrast to divide and conquer problem where the smaller subproblems are different(but not of different kind) and have to deal with each of them in different way recursively.*
