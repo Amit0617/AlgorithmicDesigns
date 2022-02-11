@@ -215,13 +215,13 @@ Quick intrduction to Asymptotic notations: There are three notations which are u
 Back to the actual question - How do we calculate runtime actually?
 The runtime of an algorithm with particular input depends upon the steps executed within algorithm and time taken by each step. For example if we consider following example where we are finding whether a number is prime or not:
 ``` java
- boolean isPrime(int x) {						"cost"		"times"
- 	for (int i = 2; i*i <= x; i++) {			c<sub>1</sub>		√x
- 		if ( x % i == 0 ) {				c<sub>2</sub>		√x - 1
- 			return false;				   c<sub>3</sub>		1
+ boolean isPrime(int x) {				      "cost"		"times"
+ 	for (int i = 2; i*i <= x; i++) {			c1		√x
+ 		if ( x % i == 0 ) {				c2		√x - 1
+ 			return false;			        c3	        1
  		}
  	}
- 	return true;								c<sub>4</sub>		1
+ 	return true;					        c4		1
  }
 ```
 Now each and every line here will take some time according to compiler and hardware constraints. Considering that `ith` line of algorithm takes some constant `c<sub>i</sub>` time than the total time of one particular line will be `c<sub>i</sub>*n<sub>i</sub>` where `n<sub>i</sub>` is the no. of times that step is executed.
