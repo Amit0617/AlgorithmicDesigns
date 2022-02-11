@@ -217,8 +217,8 @@ The runtime of an algorithm with particular input depends upon the steps execute
 ``` java
  boolean isPrime(int x) {						"cost"		"times"
  	for (int i = 2; i*i <= x; i++) {			c<sub>1</sub>		√x
- 		if ( x % i == 0 ) {						c<sub>2</sub>		√x - 1
- 			return false;						c<sub>3</sub>		1
+ 		if ( x % i == 0 ) {				c<sub>2</sub>		√x - 1
+ 			return false;				   c<sub>3</sub>		1
  		}
  	}
  	return true;								c<sub>4</sub>		1
