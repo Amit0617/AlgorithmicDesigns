@@ -1,14 +1,19 @@
 ### What is this?
 This repository is a collection of whatever I learn to improve my DSA skills. I am documenting it because it gives me an opportunity to look back and ponder again on concepts which I had learnt with more matured perspective in comparison to my first visit through those concepts.
 Let's start now.
-
+<hr></hr>
+It is still work in progress repository and don't take anything as line of stone right now. It needs lots of curation and arrangement to be considered as resource of learning.
+<hr></hr>
 # Algorithmic Designs
 Starting with simplest things like `GetInputFromUser.java` and `APlusB.java` to familiarize myself with java language(have used long time ago).
+
+To be familiar with what an algorithm is we should jump directly on grounds instead of explaining it in some _words_, I would like to give you a _feel_ of it. 
 
 ## Maximum Pairwise Product
 Find maximum product of two *distinct* numbers in a list of numbers.
 
-Now to actually reflect that we have understood the problem we will try to come up with a naive algorithm that just works. We will not think much about time and memory constraints right now.
+Lets frame a algorithm for the given condition. You are given a list of numbers and you would like to find greatest possible product of any two numbers within the list.
+Now to actually reflect that we have understood the problem we will try to come up with a naive algorithm, that just works. We will not think much about time and memory constraints right now.
 
 ##### Naive Algorithm
 A naive approach of doing this will be just multiplying all possible pairs of numbers within the given list of numbers, then comparing them and updating the `product` for larger one. 
@@ -36,7 +41,7 @@ We can use `RandomNumbers.java` to create `dataset.txt` by redirecting its outpu
 `java RandomNumbers > dataset.txt` in console and then `java MaxPairWiseProductFast < dataset.txt` to use that dataset as input rather than from STDIN (entering yourself).
 
 ##### Stress Testing 
-Now the problem is - it is still very slow and boring. We need to test our algorithm heavily and find the finally one that can lead our algorithm to fail.
+Now the problem is - it is still very slow and boring. We need to test our algorithm heavily and find the finally one case(if exists) that can lead our algorithm to fail.
 
 So this is the time to do _Stress Testing_.  
 We need following things to do it:-  
@@ -45,7 +50,7 @@ We need following things to do it:-
 *iii) A random dataset generator.*  
 *iv) An infinite loop which will keep running until we find a test case for which our algorithms give different solution.*  
 
-Methodology behind all this is that our algorithm must give same answer as the trivial algorithm(assuming it is implemented correctly, obviously) in every case. If that's not the case then it must be missing something.
+Methodology behind all this is that our algorithm must give same answer as the trivial algorithm(assuming it is implemented correctly) in every case. If that's not the case then it must be missing something.
 
 We take the random dataset generator and print a random array. Feed the random array into both algorithms and compare the result if they are same move ahead i.e., generate new random dataset and feed again. If the results are not same then stop the loop and print the test case which was fed into algorithms. So we can look into it and think about its failure cause.
 
@@ -64,7 +69,7 @@ So we can do one more _optimization_ to fix it. After finding the first largest 
 An example code is available in repository `OpMaxPairWiseProduct.java`
 
 ##### A Straight way
-We can also implement this problem by sorting the array in ascending or descending order using some sorting techniques, then returning the product of last two numbers or first two numbers respectively. 
+We can also implement this problem by sorting the array in ascending or descending order using some sorting techniques([which will learn later but here only](link to sorting techniques)), then returning the product of last two numbers or first two numbers respectively. 
 However, it is providing more than required that it is sorting whole array where we need just two largest numbers. Also, it's runtime will be higher than our fast or optimised algorithm i.e., _O(nlogn)_ in comparison to _O(n)_. Still it is not very slow and can be considered an efficient algorithm.
 
 So this was some introduction to good practices for making a really working and fast(may be complex sometimes) algorithm. 
@@ -98,13 +103,13 @@ Where _T(n)_ is number of lines of code needs to be executed for calculating the
 If you have 2Ghz CPU clock speed than it will take approx **28,000 years** to compute _T(100)_. Enjoy coffee break!
 Don't believe me, run `java NthFibonacci` and open another window of your terminal and enter `ps u -C java` 
 Just leaving an example photo...
-two photos
+[photolink](psNthFibon)
 
 If you look at the tree below you will find one of the reason is that it is calculating same thing again and again. 
-[photo]   
+[photo](recursiveTree)   
 
 Fibonacci(2) is calculated 13 times in finding just Fibonacci(8). For Fibonacci(9) it will rise to 21.
-[total wastage!]
+[total wastage!](babu rao)
 
 ##### Another Algorithmic Solution
 If we just think then in a go we can tell Fibonacci(8) will be 13 and we were able to do it by simply going in the series upto 8th number like `0,1,1,2,3,5,8,13` 
@@ -147,7 +152,7 @@ An example code is available in repository `GCD.java`.
 ##### Fast Algorithm
 If you remember we have learned an algorithm(method) when we were kids. May be you knew it as HCF(Highest Common Factor).
 A division method where we take the smaller number as divisor and greater number as dividend. If the greater number got divided completely i.e., remainder comes out to be zero then the divisor itself is the HCF of those two numbers. Else, remainder becomes the new divisor and the divisor in previous operation becomes dividend and this keeps going on until zero remainder is obtained.
-[Image](link)
+[HCF](link)
 >This is one of the classic algorithm and called as grand-daddy of all algorithms because it is the oldest nontrivial algorithm that has survived to the present day. [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).
 >It is famously known as Euclidean algrorithm. This algorithm has many theoretical and practical applications. It is used to reduce fractions to their simplest form, and is a part of many other number-theoretic and *cryptographic* calculations. Computations using this algorithm form part of the cryptographic protocols that are used to secure internet communications, and in methods for breaking these cryptosystems by factoring large composite numbers. 
 >The GCD of two numbers a and b is the product of the prime factors shared by the two numbers, where a same prime factor can be used multiple times, but only as long as the product of these factors divides both a and b. For example, since 1386 can be factored into 2 × 3 × 3 × 7 × 11, and 3213 can be factored into 3 × 3 × 3 × 7 × 17, the greatest common divisor of 1386 and 3213 equals 63 = 3 × 3 × 7, the product of their shared prime factors. If two numbers have no prime factors in common, their greatest common divisor is 1 (obtained here as an instance of the empty product), in other words they are coprime. A key advantage of the Euclidean algorithm is that it can find the GCD efficiently without having to compute the prime factors. Factorization of large integers is believed to be a computationally very difficult problem, and the security of many widely used cryptographic protocols is based upon its infeasibility.
@@ -186,6 +191,57 @@ DIY
 
 To be continued...
 
+## Runtime - 
+When we think about runtimes it intuitively comes to our understanding that the 'time' taken by an algorithm should be a runtime. But thinking from that perspective figuring out runtimes can be a huge mess. Same algorithm may take different time on different systems because it will depend on so many things apart from algorithm like system architecture, specifications of computer, even the compiler being used and the memory heirarchy as different types of memory have different speeds of providing data on demand of CPU.
+
+As a programmer you never know all those details about the machine where your algorithm is going to be run.
+
+An idea which can direct us toward a meaningful aspect of runtime when considering so many variety of issues is that all these differences between computer specifications and architecture multiply runtimes of algorithm by a **large constant**. So when measuring runtime, ignore the constant mulitples of it whether it is 1 second, 1 minute or 1 year. And consider only _asymptotic runtime_ which scales with the input size.
+
+There are some common runtimes _O(log n), O(√n), O(n), O(n*log n), O(n<sup>2</sup>), O(2<sup>n</sup>)_ which can be visualised how they scale with the input size.  
+[gif](link)
+[Media/rateOfGrowth.png](Media/rateOfGrowth.png)
+
+So we are actually interested in **rate of growth** of runtime of algorithm.
+
+Quick intrduction to Asymptotic notations: There are three notations which are used to describe runtimes of different algorithms. This can be skipped(Big omega and Big &theta;) if it is your first ever introduction to _Big O_ because it might confuse you at first ever meet:  
+**Big O** - It is worst case running time or also called **asymptotic upper bound**. We mostly focus on this because knowing worst case running time gives us a gurrantee that the given algorithm will never take longer than that. We will see how often we tend to leave insignificant values when finding big O.
+
+**Big Omega** - Similarly, it is **asymptotic lower bound** of algorithm runtime.
+
+**Big Theta** - It represents upper bound and lower bound of algorithm runtime. Or more specifically the tight bound for a function _f(n)_. It is denoted by _&theta;(g(n))_ which represents a set of function within which _f(n)_ lies. Usually we use _f(n) = &theta;(g(n))_ to represent that notion which seems little misguiding(but is done for a good reason), where g(n) is a tight bound of _f(n)_.
+
+Back to the actual question - How do we calculate runtime actually?
+The runtime of an algorithm with particular input depends upon the steps executed within algorithm and time taken by each step. For example if we consider following example where we are finding whether a number is prime or not:
+``` java
+ boolean isPrime(int x) {						"cost"		"times"
+ 	for (int i = 2; i*i <= x; i++) {			c<sub>1</sub>		√x
+ 		if ( x % i == 0 ) {						c<sub>2</sub>		√x - 1
+ 			return false;						c<sub>3</sub>		1
+ 		}
+ 	}
+ 	return true;								c<sub>4</sub>		1
+ }
+```
+Now each and every line here will take some time according to compiler and hardware constraints. Considering that `ith` line of algorithm takes some constant `c<sub>i</sub>` time than the total time of one particular line will be `c<sub>i</sub>*n<sub>i</sub>` where `n<sub>i</sub>` is the no. of times that step is executed.
+
+The exact total time in this case will come out to be:  
+```
+T(x) =  c<sub>1</sub>*√x + c<sub>2</sub>*(√x - 1) + c<sub>3</sub> + c<sub>4</sub>
+```
+which can be expressed as  
+```
+T(x) = (c<sub>1</sub> + c<sub>2</sub>)*√x + (-c<sub>2</sub> + c<sub>3</sub> + c<sub>4</sub>)
+```
+i.e., `a*√x + b` where `a` and `b` are another constants.  
+
+As said earlier, we are only interested in _rate of growth_ of algorithm but how do we make sure of that?  
+There are some general rules to keep in mind when finding out **Big O**.  
+1. Constant multiples are ignored.  
+For example:  
+An algorithm with running time with `a*n + b` is linear function of _n_ and hence we will consider it as having time complexity _O(n)_.
+2. Values of lesser significance(lower rates of growth) are ignored.
+`a*n<sup>2</sup> + b*n + c --> n<sup>2</sup>` because simply for greater input size rate of growth of `n<sup>2</sup>` will simply dominate over `n`. [See here](link to the photo of rate of growth).
 
 {
 _Note:- Definitions below are completely made up by myself and reflects my understanding of these. These shouldn't be considered standard definitions of algorithms._
@@ -193,7 +249,7 @@ _Note:- Definitions below are completely made up by myself and reflects my under
 A technique to solve a bigger problem by considering a subproblem within it and solving it in such a way that can solve the bigger problem by iterating a locally optimised solution again and again. Didn't understood? Move ahead.
 
 ##### Greedy Choice 
-A choice which will optimised locally and can be applied globally to solve the problem.
+A choice which will solve the smaller problem locally and can be applied globally to solve the problem.
 
 ##### Safe Choice 
 If the greedy choice is optimal solution and consitent with first choice it is called safe choice.
@@ -201,7 +257,7 @@ If the greedy choice is optimal solution and consitent with first choice it is c
 ##### An example to understand all above technical shit.
 Lets assume n patients have arrived at doctors office at the same time and compounder have to send them inside one by one because they can be treated individually only. Compounder wants to send them in such a way so that total waiting time for all patients is least. Given they can be sent in any order and time required to treat each patient is known.
 
-So Compounder sends the patient with least time of treatment first thinking that this way second patient will have to wait minimum time in queue. This is called Greedy Choice.
+So Compounder sends the patient with least time of treatment first, thinking that this way second patient will have to wait minimum time in queue. This is called Greedy Choice.
 
 Now, is that choice optimal enough to keep solving the subproblem by iterating it again and again and hence solve the whole problem?
 
@@ -215,7 +271,7 @@ iv) P<sub>3</sub> sent immediately, P<sub>2</sub> after 60 minutes and then P<su
 v) P<sub>2</sub> sent immediately, P<sub>3</sub> after 30 minutes and then P<sub>1</sub> after 60 minutes. Total waiting time = 90 minutes.  
 vi0 P<sub>1</sub> sent immediately, P<sub>3</sub> after 10 minutes and then P<sub>2</sub> after 60 minutes. Total waiting time = 70 minutes.  
 
-Now considering above arrangements its clear that arranging patients with least treatment time to keep first on priority.
+Now considering above arrangements its clear that arranging patients with least treatment time to keep first on priority is safe choice.
 
 You might ask that first two arrangements both have least total waiting time so why not second is optimal one? I will suggest think about waiting time for successive patients. However, the total time comes out to be same but second patient i.e., P<sub>1</sub> in that case will have to wait 30 minutes for his 10 minutes treatment, while there is no difference for P<sub>3</sub> it will be 40 in both cases.
 
@@ -259,11 +315,8 @@ Find such distribution of ads on a popular internet page owned by you so that `n
 ### Collecting Signatures
 
 
-**Divide and Conquer algorithm** - A technique to solve a bigger problem by breaking it down into multiple smaller kind of subproblem and joining them all together. As you can expect from its name also!
-*If you look closely Greedy algorithm is also the same but there all the smaller problems are of similar kind in contrast to divide and conquer problem where the smaller subproblems are different(but not of different kind) and have to deal with each of them in different way recursively.*
-
-Some more Technical jargon to give you complete insight and you don't have imposter syndrome anymore.
-**Safe Choice** -
+## Divide and Conquer algorithm  
+A technique to solve a bigger problem by breaking it down into multiple smaller similar kind of subproblem(non-overlapping) to each other and joining them all together. As you can expect from its name also!
 
 
 
@@ -271,4 +324,12 @@ Some more Technical jargon to give you complete insight and you don't have impos
 
 
 
-At the end, remember you will never be asked to solve a problem using greedy algorithm because these algorithms are taught to give you insight of how to think for a problem(which I feel we already have, we are generally just unaware of these fancy terms) rather than giving you a machinery to put input and get the desired output.}
+
+*If you look closely Greedy algorithm is where we try to scale a solution applicable to immediate smaller problem for rest of the subproblem. {also the same but there all the smaller problems are of similar kind in contrast to divide and conquer problem where the smaller subproblems are different(but not of different kind) and have to deal with each of them in different way recursively.}*
+
+
+
+
+
+
+At the end, remember you will never be asked to solve a problem using greedy algorithm because these algorithms are taught to give a insight of how to think for a problem(which I feel we already have, we are generally just unaware of these fancy terms) rather than giving you a machinery to put input and get the desired output.}
