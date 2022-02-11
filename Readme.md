@@ -4,7 +4,7 @@ Let's start now.
 <hr></hr>
 It is still work in progress repository and don't take anything as line of stone right now. It needs lots of curation and arrangement to be considered as resource of learning.
 <hr></hr>
-# Algorithmic Designs  
+# Algorithmic Designs
 Starting with simplest things like `GetInputFromUser.java` and `APlusB.java` to familiarize myself with java language(have used long time ago).
 
 To be familiar with what an algorithm is we should jump directly on grounds instead of explaining it in some _words_, I would like to give you a _feel_ of it. 
