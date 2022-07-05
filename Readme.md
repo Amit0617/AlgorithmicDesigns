@@ -242,7 +242,7 @@ There are some general rules to keep in mind when finding out **Big O**.
 For example:  
 An algorithm with running time with `a*n + b` is linear function of _n_ and hence we will consider it as having time complexity _O(n)_.
 2. Values of lesser significance(lower rates of growth) are ignored.
-`a*n<sup>2</sup> + b*n + c --> n<sup>2</sup>` because simply for greater input size rate of growth of `n<sup>2</sup>` will simply dominate over `n`. [See here](link to the photo of rate of growth).
+`a*n<sup>2</sup> + b*n + c --> n<sup>2</sup>` because simply for greater input size, rate of growth of `n<sup>2</sup>` will simply dominate over `n`. [See here](link to the photo of rate of growth).
 
 {
 _Note:- Definitions below are completely made up by myself and reflects my understanding of these. These shouldn't be considered standard definitions of algorithms._
@@ -250,7 +250,7 @@ _Note:- Definitions below are completely made up by myself and reflects my under
 A technique to solve a bigger problem by considering a subproblem within it and solving it in such a way that can solve the bigger problem by iterating a locally optimised solution again and again. Didn't understood? Move ahead.
 
 ##### Greedy Choice 
-A choice which will solve the smaller problem locally and can be applied globally to solve the problem.
+A choice which will solve the smaller problem locally. (~and can be applied globally to solve the problem~).
 
 ##### Safe Choice 
 If the greedy choice is optimal solution and consitent with first choice it is called safe choice.
