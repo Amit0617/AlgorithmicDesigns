@@ -158,7 +158,7 @@ A division method where we take the smaller number as divisor and greater number
 >It is famously known as Euclidean algrorithm. This algorithm has many theoretical and practical applications. It is used to reduce fractions to their simplest form, and is a part of many other number-theoretic and *cryptographic* calculations. Computations using this algorithm form part of the cryptographic protocols that are used to secure internet communications, and in methods for breaking these cryptosystems by factoring large composite numbers. 
 >The GCD of two numbers a and b is the product of the prime factors shared by the two numbers, where a same prime factor can be used multiple times, but only as long as the product of these factors divides both a and b. For example, since 1386 can be factored into 2 × 3 × 3 × 7 × 11, and 3213 can be factored into 3 × 3 × 3 × 7 × 17, the greatest common divisor of 1386 and 3213 equals 63 = 3 × 3 × 7, the product of their shared prime factors. If two numbers have no prime factors in common, their greatest common divisor is 1 (obtained here as an instance of the empty product), in other words they are coprime. A key advantage of the Euclidean algorithm is that it can find the GCD efficiently without having to compute the prime factors. Factorization of large integers is believed to be a computationally very difficult problem, and the security of many widely used cryptographic protocols is based upon its infeasibility.
 >It is based on the principle that the greatest common divisor of two numbers does not change if the larger number is replaced by its difference with the smaller number. For example, 21 is the GCD of 252 and 105 (as 252 = 21 × 12 and 105 = 21 × 5), and the same number 21 is also the GCD of 105 and 147 (= 252 - 105).  By reversing the steps, the GCD can be expressed as a linear combination of the two original numbers, that is the sum of the two numbers, each multiplied by an integer (for example, 21 = 5 × 105 + (−2) × 252). The fact that the GCD can always be expressed in this way is known as Bézout's identity. 
->[Learn more](https://en.wikipedia.org/wiki/Euclidean_algorithm)   
+>[Learn more](https://en.wikipedia.org/wiki/Euclidean_algorithm#B%C3%A9zout's_identity)   
 
 An example code is available in repository `GCDFast.java`
 
@@ -192,7 +192,7 @@ DIY
 
 To be continued...
 
-## Runtime - 
+## Runtime
 When we think about runtimes it intuitively comes to our understanding that the 'time' taken by an algorithm should be a runtime. But thinking from that perspective figuring out runtimes can be a huge mess. Same algorithm may take different time on different systems because it will depend on so many things apart from algorithm like system architecture, specifications of computer, even the compiler being used and the memory heirarchy as different types of memory have different speeds of providing data on demand of CPU.
 
 As a programmer you never know all those details about the machine where your algorithm is going to be run.
@@ -201,7 +201,7 @@ An idea which can direct us toward a meaningful aspect of runtime when consideri
 
 There are some common runtimes _O(log n), O(√n), O(n), O(n*log n), O(n<sup>2</sup>), O(2<sup>n</sup>)_ which can be visualised how they scale with the input size.  
 [gif](link)
-[Media/rateOfGrowth.png](Media/rateOfGrowth.png)
+![Media/rateOfGrowth.png](https://github.com/Amit0617/AlgorithmicDesigns/blob/master/Media/rateOfGrowth.png)
 
 So we are actually interested in **rate of growth** of runtime of algorithm.
 
